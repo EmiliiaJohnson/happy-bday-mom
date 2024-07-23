@@ -1,0 +1,77 @@
+.bday-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: bg-color-animation 7s infinite;
+  background: repeating-conic-gradient(
+    from 0deg at 100% 100%,
+    #ffffff00 0deg 6deg,
+    #ffffff40 6deg 12deg,
+    #ffffff00 12deg
+  );
+  transition: all ease;
+}
+.cat-img {
+  width: 20vh;
+}
+.bday__text {
+  text-shadow: 3px 3px 4px #00000091;
+}
+.bday__button {
+  border-radius: 16px;
+  border: 2px solid #6495ed;
+  padding: 20px;
+  background-color: #fff8dc;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+.bday__button:hover {
+  transform: scale(1.1);
+  @media (max-width: 400px) {
+    transform: scale(1);
+  }
+}
+.bday__button:active {
+  transform: scale(0.9);
+}
+.bday__img {
+  height: 70px;
+  animation: button-img-animation 3s ease-in-out infinite;
+}
+@keyframes bg-color-animation {
+  0% {
+    background-color: #fbc1c1;
+  }
+  20% {
+    background-color: #f6ffb1;
+  }
+  40% {
+    background-color: #b8f9b3;
+  }
+  60% {
+    background-color: #b2f2fb;
+  }
+  80% {
+    background-color: #fbc9f9;
+  }
+  100% {
+    background-color: #fbc1c1;
+  }
+}
+@keyframes button-img-animation {
+  15%,
+  40% {
+    transform: rotate(0deg);
+  }
+  20%,
+  30% {
+    transform: rotate(6deg);
+  }
+  25%,
+  35% {
+    transform: rotate(-6deg);
+  }
+}

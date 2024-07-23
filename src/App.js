@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import Verification from "./components/Verification/Verification";
+import HappyBDay from "./components/HappyBDay/HappyBDay";
+import AccessNotAllowed from "./components/AccessNotAllowed/AccessNotAllowed";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+const routes = [
+  { path: "*", element: <Verification /> },
+  { path: "/happy-birthday", element: <HappyBDay /> },
+  { path: "/access-not-allowed", element: <AccessNotAllowed /> },
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <main>
+          <Routes>
+            {routes.map((route, index) => (
+              <Route key={index} path={route.path} element={route.element} />
+            ))}
+          </Routes>
+        </main>
+      </BrowserRouter>
     </div>
   );
 }
